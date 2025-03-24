@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = "https://extractor.masyglink.com";
+const BASE_URL = "https://www.masyglink.com";
 const defaultTitle = "Home";
 const fullTitle = `${defaultTitle} | Masyg Extractor`;
 const pageDescription =
@@ -74,12 +74,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      {/* <Head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
         />
-      </Head>
+      </Head> */}
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
