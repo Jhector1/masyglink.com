@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
+// import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,18 +55,17 @@ export const metadata: Metadata = {
   },
 };
 
-const videoSchema = {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "Example Video",
-  "description": "An example video demonstrating our product features.",
-  "thumbnailUrl": `${BASE_URL}/images/video-thumbnail.jpg`,
-  "uploadDate": "2023-03-01",
-  "duration": "PT1M33S",
-  "contentUrl": `${BASE_URL}/videos/demo.mp4`,
-  "embedUrl": `${BASE_URL}/videos/embed/demo`,
-};
-
+// const videoSchema = {
+//   "@context": "https://schema.org",
+//   "@type": "VideoObject",
+//   "name": "Example Video",
+//   "description": "An example video demonstrating our product features.",
+//   "thumbnailUrl": `${BASE_URL}/images/video-thumbnail.jpg`,
+//   "uploadDate": "2023-03-01",
+//   "duration": "PT1M33S",
+//   "contentUrl": `${BASE_URL}/videos/demo.mp4`,
+//   "embedUrl": `${BASE_URL}/videos/embed/demo`,
+// };
 export default function RootLayout({
   children,
 }: {
@@ -74,12 +73,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-        />
-      </Head> */}
+      <head>
+        {/* Manually include og:image for robustness */}
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={fullTitle} />
+        <meta property="twitter:image" content={imageUrl} />
+        <meta property="twitter:card" content="summary_large_image" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
