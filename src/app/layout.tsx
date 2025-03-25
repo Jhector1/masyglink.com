@@ -18,7 +18,7 @@ const BASE_URL = "https://www.masyglink.com";
 const defaultTitle = "Home";
 const fullTitle = `${defaultTitle} | Masyg Extractor`;
 const pageDescription =
-  "Discover our innovative React app that extracts keywords from receipt invoices and integrates seamlessly with QuickBooks and other financial services.";
+  "Effortlessly extract keywords from receipt invoices with unmatched speed and accuracy. Seamlessly integrates with QuickBooks and other financial services for enhanced efficiency.";
 const imageUrl = `${BASE_URL}/images/SEO2.png`;
 
 export const metadata: Metadata = {
