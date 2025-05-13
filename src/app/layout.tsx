@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 const BASE_URL = "https://www.masyglink.com";
 const defaultTitle = "Home";
 const fullTitle = `${defaultTitle} | Masyg Extractor`;
-const pageDescription =
-  "Effortlessly extract keywords from receipt invoices with unmatched speed and accuracy. Seamlessly integrates with QuickBooks and other financial services for enhanced efficiency.";
+const pageDescription = 
+  "Save hours on data entry with our AI-powered receipt & invoice keyword extractor—delivering lightning-fast, 99.9% accurate results and seamless QuickBooks (plus all major finance platforms) integration for a truly worry-free accounting workflow.";
 const imageUrl = `${BASE_URL}/images/SEO2.png`;
 
 export const metadata: Metadata = {

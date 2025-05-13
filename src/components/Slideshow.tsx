@@ -27,20 +27,21 @@ const slidesData: Slide[] = [
     id: 3,
     title: "QuickBooks",
     image: "/images/quickbooks.png",
-    caption: "Coming soon!!!",
+    caption:'Send data seamlessly to QuickBooks for real-time accounting.',
   },
   {
     id: 4,
     title: "Xero",
     image: "/images/xero.png",
-    caption: "Coming soon!!!",
+    caption: 'Connect with Xero for comprehensive accounting and financial management.',
+
   },
-  {
-    id: 5,
-    title: "Service Titan",
-    image: "/images/service-titan.png",
-    caption: "Coming soon!!!",
-  },
+  // {
+  //   id: 5,
+  //   title: "Service Titan",
+  //   image: "/images/service-titan.png",
+  //   caption: "Coming soon!!!",
+  // },
 ];
 
 const Slideshow: React.FC = () => {
