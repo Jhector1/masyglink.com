@@ -1,110 +1,67 @@
-// app/page.tsx
-// import { Metadata } from "next";
-// import { useRouter } from "next/navigation";
-// import { useAuth } from "@/context/UserContext";
-// import AuthenticationForm from "@/components/authenticationForm";
-// import MasygModal from "@/tool/Modal";
-// import { useModal } from "@/hooks/useModal";
+
+// =============================================
+// 3) app/page.tsx — cleaned hero + a11y + no ServiceTitan
+// =============================================
+import Link from "next/link";
+// import Image from "next/image";
 import FeatureCard from "@/components/FeatureCard";
 import Slideshow from "@/components/Slideshow";
-import Link from 'next/link';
-// export const metadata: Metadata = {
-//   title: "Smart Invoice & Data Processor",
-//   description: "Convert invoices and receipts into structured data seamlessly.",
-// };
 
 export default function HomePage() {
-  // const { state } = useAuth();
-  // const router = useRouter();
-
-  // const {
-  //   isOpen: isOpenLoginModal,
-  //   closeModal: closeLoginModal,
-  //   openModal: openLoginModal,
-  // } = useModal();
-
+  const SITE_URL = 'https://extractor.masyglink.com'
+  const loginUrl = process.env.NEXT_PUBLIC_VITE_CLIENT_URL || `${SITE_URL}/login`;
   return (
     <div className="w-screen">
-      <section className="bg-gradient-to-b from-green-50 to-gray-100 py-16 px-6 sm:py-24 sm:px-12 lg:px-20">
-        {/* <MasygModal handler={() => {}} isOpen={isOpenLoginModal} closeModal={closeLoginModal}>
-          <AuthenticationForm closeModal={closeLoginModal} />
-        </MasygModal> */}
-        {/* Hero Section */}
-        {/* Hero Section */}
-{/* Hero Section */}
-<div className="rounded-full max-w-5xl bg-red-100 p-10 mx-auto text-center mb-12 animate-fade-in">
-  {/* Highlighted Feature Section */}
-  <p className="text-lg font-semibold text-blue-700 uppercase tracking-widest mb-2 animate-fadeSlideUp">
-    Fast. Accurate. Effortless.
-  </p>
-  <p className="text-xl sm:text-2xl font-medium text-gray-800">
-    Transform invoices and receipts into structured data in seconds—no manual entry required.
-    Users love how easy it is to get started and how fast they can integrate with QuickBooks, Xero, and more.
-  </p>
-  {/* Existing Title */}
-  <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mt-4">
-    Smart Invoice, Receipt & Data Processor
-  </h1>
-  {/* Existing Description */}
-  <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
-    Seamlessly convert your invoices and receipts into structured data. Analyze, export
-    to Excel or CSV, and integrate with QuickBooks, Xero, Service Titan, and more—all while
-    ensuring the highest standards of security and privacy.
-  </p>
-  {/* Social Proof */}
-  <p className="text-sm text-gray-500 mt-3">Trusted by 5,000+ businesses worldwide.</p>
-  {/* CTA Button */}
-  <div className="mt-8">
-    <Link 
-      href={`${process.env.NEXT_PUBLIC_VITE_CLIENT_URL}/login`}
-      className="inline-block bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-medium text-lg px-10 py-4 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105"
-    >
-      Get Started in Seconds
-    </Link>
-  </div>
-</div>
-
+      <section className="bg-gradient-to-b from-emerald-50 to-gray-100 py-16 px-6 sm:py-24 sm:px-12 lg:px-20">
+        <div className="max-w-5xl mx-auto text-center mb-12 rounded-3xl bg-white/70 backdrop-blur p-10 shadow-sm">
+          <p className="text-sm font-semibold text-sky-700 uppercase tracking-widest">Fast. Accurate. Effortless.</p>
+          <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold text-gray-900">Smart Invoice, Receipt & Data Processor</h1>
+          <p className="mt-5 text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
+            Convert invoices and receipts into structured data in seconds—no manual entry.
+            Export to Excel/CSV and sync with QuickBooks or Xero with bank‑grade security.
+          </p>
+          <div className="mt-8">
+            <Link
+              href={loginUrl}
+              className="inline-block rounded-full px-8 py-3 text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-600 shadow-md transition"
+              aria-label="Get started with Masyg Extractor"
+            >
+              Get Started in Seconds
+            </Link>
+          </div>
+          <p className="mt-3 text-xs text-gray-500" aria-label="social proof">Trusted by 5,000+ finance teams.</p>
+        </div>
 
         <Slideshow />
-        {/* Features Grid */}
-        <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <FeatureCard
-            title="Advanced GPT Parsing"
-            description="Harness AI to accurately extract quantities, amounts, vendor names, and more, minimizing manual errors."
-            icon="🔎"
-          />
-          <FeatureCard
-            title="QuickBooks Integration"
-            description="Send data seamlessly to QuickBooks for real-time accounting."
-            icon="💼"
-          />
-          <FeatureCard
-            title="Excel & CSV Exports"
-            description="Export your data as a simple CSV or a fully formatted Excel file."
-            icon="📊"
-          />
-          <FeatureCard
-            title="Secure & Private"
-            description="Our stringent security protocols ensure your data remains safe and confidential."
-            icon="🔒"
-          />
-          <FeatureCard
-            title="Xero Integration"
-            description="Connect with Xero for comprehensive accounting and financial management."
-            icon="🧾"
-          />
-          {/* <FeatureCard
-            title="Service Titan Integration"
-            description="Manage service operations efficiently with seamless Service Titan integration."
-            icon="🔧"
-          /> */}
-          <FeatureCard
-            title="Excel File Merge"
-            description="Easily combine Excel files with an intuitive drag-and-drop interface to override and merge columns."
-            icon="🔀"
-          />
+
+        <div className="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <FeatureCard title="Advanced GPT Parsing" description="Extract quantities, amounts, vendors, and line items with 99.9% accuracy." icon="🔎" />
+          <FeatureCard title="QuickBooks Integration" description="Post transactions and invoices to QuickBooks in real time." icon="💼" />
+          <FeatureCard title="Xero Integration" description="Seamless two‑way sync for Xero ledgers and contacts." icon="🧾" />
+          <FeatureCard title="Excel & CSV Exports" description="One‑click exports for audit‑ready spreadsheets." icon="📊" />
+          <FeatureCard title="Bank‑Grade Security" description="Encryption in transit and at rest with strict access controls." icon="🔒" />
+          <FeatureCard title="Excel Merge" description="Drag‑and‑drop combine spreadsheets; auto‑align columns and headers." icon="🔀" />
+        </div>
+
+        <div className="max-w-5xl mx-auto mt-16 grid gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl p-6 bg-white shadow-sm">
+            <h2 className="text-2xl font-semibold">Why Masyg Extractor?</h2>
+            <p className="mt-2 text-gray-700">
+              Purpose‑built for AP teams that need accuracy, speed, and reliable accounting system syncs. No lock‑in, no black boxes—just clean, verifiable data.
+            </p>
+          </div>
+          <div className="rounded-2xl p-6 bg-white shadow-sm">
+            <h2 className="text-2xl font-semibold">What you get</h2>
+            <ul className="mt-2 list-disc pl-5 text-gray-700 space-y-1">
+              <li>Human‑reviewable parsing with audit trail</li>
+              <li>Bulk uploads with live progress</li>
+              <li>QuickBooks/Xero adapters + Excel exports</li>
+              <li>Role‑based permissions and activity logs</li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
   );
 }
+

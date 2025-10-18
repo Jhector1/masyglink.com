@@ -3,12 +3,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
+} */
+/* globals.css — add near the bottom */
+
+/* Typography polish */
+.prose .lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: rgb(55 65 81); /* gray-700 */
 }
 
-@theme inline {
+/* Small fade-in for page sections */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+section, article, header {
+  animation: fadeInUp 320ms ease-out;
+  animation-fill-mode: both;
+}
+
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -42,4 +61,4 @@ body {
 
 .animate-fadeSlideUp {
   animation: fadeSlideUp 1s ease-out forwards;
-}
+} */
